@@ -1,0 +1,33 @@
+  
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" 
+    class="page"
+    loaded="pageLoaded" 
+    xmlns:ui="nativescript-fancy-camera/view"
+    xmlns:video="nativescript-videoplayer">
+    <ScrollView>
+        <StackLayout>
+            <ui:CameraView id="cameraView" quality="MAX_480P" width="90" height="120"/>
+            <ScrollView orientation="horizontal">
+                <Repeater id="repeater" items="{{ repeater }}">
+                    <Repeater.itemsLayout>
+                        <StackLayout orientation="horizontal" backgroundColor="#e1e1e1"/>
+                    </Repeater.itemsLayout>  
+                    <Repeater.itemTemplate> 
+                        <GridLayout>
+                            <Image height="120" src="{{ src }}" visibility="{{isImage?'visible':'collapsed'}}" />
+                            <video:Video width="90" height="120" src="{{src}}" visibility="{{isImage ? 'collapsed' : 'visible'}}" />
+                        </GridLayout>
+                    </Repeater.itemTemplate>
+                </Repeater>
+            </ScrollView>
+            <Button text="Toggle Camera" tap="toggleCamera"/>
+            <Button text="Take Photos" tap="takePhoto"/>
+            <Button text="Record Video" tap="recordVideo"/> 
+            <Button text="Stop Recording" tap="stopRecord"/>
+            <Button text="Show Camera" tap="showCamera"/>
+            <Button text="Show Basic Recorder" tap="showBasicRecorder"/>
+            <Button text="Show Basic Photo" tap="showBasicPhoto"/>
+            <Button text="RESET" tap="tapReset"/>
+        </StackLayout>
+    </ScrollView>
+</Page>
