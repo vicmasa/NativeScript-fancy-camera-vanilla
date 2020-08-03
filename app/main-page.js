@@ -1,5 +1,3 @@
-const FancyCamera = require('nativescript-fancy-camera');
-const fc = new FancyCamera.FancyCamera();
 const ViewModel = require('./main-view-model');
 const modalcameramulti = "~/modal/cameramulti/cameramulti";
 
@@ -38,72 +36,6 @@ function setContent(file, isArray) {
     page.getViewById('repeater').refresh();
     ViewModel.set('loaded', true);
 }
-// function onEvent(args) {
-//     console.log('onEvent()');
-//     const object = args.object;
-//     const file = object.get('file');
-//     console.log(file);
-//     setContent(file);
-// }
-// exports.toggleCamera = function (args) {
-//     cameraView.toggleCamera();
-// }
-// function setEventListenerCamera() {
-//     if (isInit) {
-//         isInit = false;
-//         cameraView.on('finished', onEvent.bind(this));
-//     }
-// }
-// exports.takePhoto = function (args) {
-//     if (ViewModel.get('loaded')) {
-//         console.log('takePhoto()');
-//         ViewModel.set('loaded', false);
-//         ViewModel.set('isImage', true);
-//         setEventListenerCamera();
-//         cameraView.takePhoto();
-//     }
-// }
-// exports.recordVideo = function (args) {
-//     if (ViewModel.get('loaded')) {
-//         console.log('recordVideo()');
-//         ViewModel.set('loaded', false);
-//         ViewModel.set('isImage', false);
-//         setEventListenerCamera();
-//         cameraView.startRecording();
-//     }
-// }
-// exports.stopRecord = function (args) {
-//     cameraView.stopRecording();
-// }
-// exports.showCamera = function (args) {
-//     fc.show().then(data => {
-//         if (data && data.file && data.type) {
-//             if (data.type === 'video') {
-//                 ViewModel.set('isImage', false);
-//             }
-//             if (data.type === 'photo') {
-//                 ViewModel.set('isImage', true);
-//             }
-//             setContent(data.file);
-//         }
-//     });
-// }
-// exports.showBasicPhoto = function (args) {
-//     fc.takePhoto().then(data => {
-//         if (data && data.file) {
-//             ViewModel.set('isImage', true);
-//             setContent(data.file);
-//         }
-//     });
-// }
-// exports.showBasicRecorder = function (args) {
-//     fc.record().then(data => {
-//         if (data && data.file) {
-//             ViewModel.set('isImage', false);
-//             setContent(data.file);
-//         }
-//     });
-// }
 //MODAL CAMERA LOGIC
 exports.tapModal = function(args){
     setModalCamera(getModalCamera(), 1);
