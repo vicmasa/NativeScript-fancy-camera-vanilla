@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "nativescript-dev-webpack": "~1.5.1",
-    "node-sass": "^4.14.1"
+    "node-sass": "^7.0.0"
   },
   "gitHead": "2250137db8c1e0bd0eb543e8e4563cb71480c00d",
   "readme": "NativeScript Application"
